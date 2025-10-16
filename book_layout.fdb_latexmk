@@ -1,0 +1,23 @@
+# Fdb version 4
+["pdflatex"] 1760624588.59327 "/Users/kevin.k/baby_book/book_layout.tex" "book_layout.pdf" "book_layout" 1760624588.83647 2
+  "/Users/kevin.k/baby_book/book_layout.tex" 1760624138.73248 5508 da896c157ec44e542767b9bfea83d438 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/bk12.clo" 1705352648 8285 2aa2c1f4744c4405b9b440ce6102b311 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/book.cls" 1705352648 23268 80674e17dbdc75804bd4d067e837600a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty" 1705352648 5048 425739d70251273bf93e3d51f3c40048 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.sty" 1707868014 3484 ff877041166391bc5ca8a1e45614784e ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1708463273 30006 3d512c0edd558928ddea1690180ef77e ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty" 1708463273 6565 10e89ed128ccd59431746bbdd82129fc ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1708376303 9327 11bedad2ac38f92e405a38ed18489a03 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/xelatex/xecjk/xeCJK.sty" 1659735237 183137 ed372550124703b2b73cbcc0b47cb20f ""
+  "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
+  "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1729762255 8221430 77892b18be7ce721900a10af197c05b4 ""
+  "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
+  "book_layout.aux" 1760624588.59284 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "book_layout.tex" 1760624138.73248 5508 da896c157ec44e542767b9bfea83d438 ""
+  (generated)
+  "book_layout.aux"
+  "book_layout.log"
+  "book_layout.pdf"
+  (rewritten before read)

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泡泡知道自己在哪裡 - 寶寶的範疇思維書</title>
+    <meta name="description" content="一本將抽象哲學概念轉化為寶寶可理解的童書，透過泡泡的故事探索意識邊界與範疇思維">
+    <meta name="keywords" content="童書,哲學,泡泡,意識,範疇思維,兒童教育">
+    <meta name="author" content="郭庭愷">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="book">
+    <meta property="og:url" content="https://nehsm30126@gmail.com.github.io/baby_book/">
+    <meta property="og:title" content="泡泡知道自己在哪裡 - 寶寶的範疇思維書">
+    <meta property="og:description" content="一本將抽象哲學概念轉化為寶寶可理解的童書">
+    <meta property="og:image" content="https://nehsm30126@gmail.com.github.io/baby_book/Cover.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nehsm30126@gmail.com.github.io/baby_book/">
+    <meta property="twitter:title" content="泡泡知道自己在哪裡 - 寶寶的範疇思維書">
+    <meta property="twitter:description" content="一本將抽象哲學概念轉化為寶寶可理解的童書">
+    <meta property="twitter:image" content="https://nehsm30126@gmail.com.github.io/baby_book/Cover.png">
+    
+    <style>
+        /* 基礎設置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', '微軟正黑體', sans-serif;
+            background: linear-gradient(135deg, #E3F2FD 0%, #ffffff 100%);
+            color: #1976D2;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* 導航欄 */
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(25,118,210,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1976D2;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #1976D2;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FF9800;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 首頁介紹 */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #1976D2, #FF9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #1976D2, #42A5F5);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(25,118,210,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(25,118,210,0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #FF9800, #FFB74D);
+            box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 6px 20px rgba(255,152,0,0.4);
+        }
+
+        /* 書籍預覽 */
+        .book-preview {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .book-preview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1976D2;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(25,118,210,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .book-card h3 {
+            color: #1976D2;
+            margin-bottom: 1rem;
+        }
+
+        /* 頁面容器 */
+        .page {
+            width: 20cm;
+            min-height: 20cm;
+            margin: 2rem auto;
+            padding: 1.5cm;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 封面樣式 */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cover-image {
+            width: 12cm;
+            height: 12cm;
+            object-fit: contain;
+            margin-bottom: 1cm;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(25,118,210,0.3);
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #1976D2;
+            margin-bottom: 0.5cm;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #1976D2;
+            margin-bottom: 2cm;
+            opacity: 0.8;
+        }
+
+        .author {
+            font-size: 1.2em;
+            color: #1976D2;
+            margin-bottom: 1cm;
+        }
+
+        .year {
+            font-size: 1em;
+            color: #1976D2;
+            opacity: 0.7;
+        }
+
+        /* 內容頁面樣式 */
+        .content-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page-image {
+            width: 14cm;
+            height: 14cm;
+            object-fit: contain;
+            margin-bottom: 0.5cm;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(25,118,210,0.2);
+            flex-shrink: 0;
+        }
+
+        /* 文字樣式 */
+        .text {
+            font-size: 1.6em;
+            color: #1976D2;
+            margin-bottom: 0.2cm;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .sound-effect {
+            font-size: 2em;
+            color: #FF9800;
+            font-weight: bold;
+            margin-bottom: 0.3cm;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: bounce 2s infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* 對話泡泡樣式 */
+        .speech-bubble {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            border: 3px solid #1976D2;
+            border-radius: 25px;
+            padding: 0.6cm 1cm;
+            margin: 0.2cm 0;
+            position: relative;
+            font-size: 1.4em;
+            color: #1976D2;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(25,118,210,0.3);
+            max-width: 14cm;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .speech-bubble:hover {
+            transform: scale(1.05);
+        }
+
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #1976D2;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #E3F2FD;
+        }
+
+        /* 泡泡圖標 */
+        .bubble-icon {
+            display: inline-block;
+            width: 0.8em;
+            height: 0.8em;
+            background: radial-gradient(circle, rgba(25,118,210,0.3) 0%, rgba(25,118,210,0.1) 100%);
+            border: 2px solid #1976D2;
+            border-radius: 50%;
+            margin-right: 0.3em;
+            vertical-align: middle;
+        }
+
+        /* 彩虹文字效果 */
+        .rainbow-text {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s ease-in-out infinite;
+            font-weight: bold;
+        }
+
+        @keyframes rainbow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* 特殊效果 */
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .page {
+                width: 100%;
+                min-height: auto;
+                padding: 1cm;
+                margin: 1rem auto;
+            }
+            
+            .cover-image, .page-image {
+                width: 100%;
+                max-width: 15cm;
+                height: auto;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* 頁面切換 */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* 頁面導航 */
+        .page-nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .page-nav button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(45deg, #1976D2, #42A5F5);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(25,118,210,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .page-nav button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">🫧 泡泡知道自己在哪裡</a>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#book">閱讀書籍</a></li>
+                <li><a href="#about">關於作者</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首頁 -->
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="container">
+                <h1>泡泡知道自己在哪裡</h1>
+                <p>一本將抽象哲學概念轉化為寶寶可理解的童書，透過泡泡的故事探索意識邊界與範疇思維</p>
+                <div class="cta-buttons">
+                    <a href="#book" class="btn">開始閱讀</a>
+                    <a href="泡泡知道自己在哪裡.pdf" class="btn btn-secondary" download>下載PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="book-preview">
+            <div class="container">
+                <h2>書籍特色</h2>
+                <div class="book-grid">
+                    <div class="book-card">
+                        <img src="Cover.png" alt="封面">
+                        <h3>精美插圖</h3>
+                        <p>使用AI生成的專業插圖，色彩柔和，適合兒童觀看</p>
+                    </div>
+                    <div class="book-card">
+                        <img src="Page1.png" alt="第1頁">
+                        <h3>互動設計</h3>
+                        <p>點擊對話泡泡，體驗互動效果</p>
+                    </div>
+                    <div class="book-card">
+                        <img src="Page3.png" alt="第3頁">
+                        <h3>哲學啟蒙</h3>
+                        <p>將深奧的意識哲學轉化為寶寶可理解的故事</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 書籍內容 -->
+    <section id="book" class="page-section">
+        <!-- 封面頁 -->
+        <div class="page cover">
+            <img src="Cover.png" alt="封面插圖" class="cover-image">
+            <h1 class="title">泡泡知道自己在哪裡</h1>
+            <p class="subtitle">寶寶的範疇思維書</p>
+            <p class="author">作者：郭庭愷</p>
+            <p class="year">2025年</p>
+            
+            <!-- 裝飾性泡泡 -->
+            <div class="sparkle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="sparkle" style="top: 30%; right: 15%; animation-delay: 0.5s;"></div>
+            <div class="sparkle" style="bottom: 25%; left: 20%; animation-delay: 1s;"></div>
+            <div class="sparkle" style="bottom: 15%; right: 25%; animation-delay: 1.5s;"></div>
+        </div>
+
+        <!-- 第1頁：泡泡出生了 -->
+        <div class="page content-page">
+            <img src="Page1.png" alt="泡泡出生了" class="page-image">
+            <div class="sound-effect">噗噗噗...</div>
+            <div class="text">泡泡從泡泡機裡飛出來</div>
+            <div class="text">圓圓的、透明的</div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>泡泡知道自己是泡泡
+            </div>
+        </div>
+
+        <!-- 第2頁：泡泡看到自己 -->
+        <div class="page content-page">
+            <img src="Page2.png" alt="泡泡看到自己" class="page-image">
+            <div class="text">泡泡在鏡子前</div>
+            <div class="text">看到另一個泡泡</div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>那是誰？
+            </div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>是我！
+            </div>
+        </div>
+
+        <!-- 第3頁：泡泡的世界 -->
+        <div class="page content-page">
+            <img src="Page3.png" alt="泡泡的世界" class="page-image">
+            <div class="text">泡泡裡有<span class="rainbow-text">彩虹</span></div>
+            <div class="text">泡泡外有風</div>
+            <div class="text">泡泡知道：</div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>我在裡面，世界在外面
+            </div>
+        </div>
+
+        <!-- 第4頁：泡泡變大了 -->
+        <div class="page content-page">
+            <img src="Page4.png" alt="泡泡變大了" class="page-image">
+            <div class="sound-effect">呼呼呼...</div>
+            <div class="text">泡泡越來越大</div>
+            <div class="text">邊界越來越薄</div>
+            <div class="text">快要...快要...</div>
+        </div>
+
+        <!-- 第5頁：泡泡破了 -->
+        <div class="page content-page">
+            <img src="Page5.png" alt="泡泡破了" class="page-image">
+            <div class="sound-effect">啪！</div>
+            <div class="text">泡泡不見了</div>
+            <div class="text">彩虹飛散了</div>
+            <div class="text">風吹進來了</div>
+        </div>
+
+        <!-- 第6頁：新的泡泡 -->
+        <div class="page content-page">
+            <img src="Page6.png" alt="新的泡泡" class="page-image">
+            <div class="sound-effect">噗噗噗...</div>
+            <div class="text">又一個泡泡飛出來</div>
+            <div class="text">圓圓的、透明的</div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>我又是泡泡了！
+            </div>
+        </div>
+
+        <!-- 第7頁：泡泡的朋友們 -->
+        <div class="page content-page">
+            <img src="Page7.png" alt="泡泡的朋友們" class="page-image">
+            <div class="text">好多泡泡！</div>
+            <div class="text">每個泡泡都有自己的<span class="rainbow-text">彩虹</span></div>
+            <div class="text">每個泡泡都有自己的邊界</div>
+            <div class="text">每個泡泡都知道自己在哪裡</div>
+        </div>
+
+        <!-- 第8頁：泡泡擁抱 -->
+        <div class="page content-page">
+            <img src="Page8.png" alt="泡泡擁抱" class="page-image">
+            <div class="text">兩個泡泡輕輕碰在一起</div>
+            <div class="text">邊界變模糊了</div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>我們是一起的嗎？
+            </div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>我們還是分開的嗎？
+            </div>
+        </div>
+
+        <!-- 第9頁：泡泡融合 -->
+        <div class="page content-page">
+            <img src="Page9.png" alt="泡泡融合" class="page-image">
+            <div class="text">變成一個大泡泡！</div>
+            <div class="text"><span class="rainbow-text">彩虹</span>混合了</div>
+            <div class="text">邊界重新畫了</div>
+            <div class="speech-bubble">
+                <span class="bubble-icon"></span>我們現在是一體的
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於作者 -->
+    <section id="about" class="page-section">
+        <div class="container" style="padding: 8rem 0 4rem; text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: #1976D2;">關於作者</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #666;">
+                    郭庭愷是一位熱愛將抽象概念轉化為兒童可理解內容的作者。
+                    這本書是他將深刻的哲學思考轉化為童書的一次嘗試，
+                    希望能為孩子們帶來既有趣又有教育意義的閱讀體驗。
+                </p>
+                <p style="font-size: 1.1rem; color: #888;">
+                    「每個泡泡都有自己的邊界，就像每個人都有自己的意識邊界。
+                    透過泡泡的故事，我們可以讓孩子們理解自我與世界的關係。」
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁面導航 -->
+    <div class="page-nav">
+        <button onclick="scrollToTop()" title="回到頂部">↑</button>
+        <button onclick="toggleFullscreen()" title="全屏閱讀">⛶</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 頁面切換
+        function showSection(sectionId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // 導航點擊事件
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').substring(1);
+                showSection(target);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // CTA按鈕點擊事件
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href').substring(1);
+                    showSection(target);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // 對話泡泡互動效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const speechBubbles = document.querySelectorAll('.speech-bubble');
+            
+            speechBubbles.forEach(bubble => {
+                bubble.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.transition = 'transform 0.2s ease';
+                    
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+            
+            // 添加隨機閃爍效果
+            function createSparkle() {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.position = 'absolute';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 2000);
+            }
+            
+            // 每3秒創建一個閃爍效果
+            setInterval(createSparkle, 3000);
+        });
+
+        // 回到頂部
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 全屏切換
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // 滾動時導航欄效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255,255,255,0.98)';
+            } else {
+                navbar.style.background = 'rgba(255,255,255,0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
