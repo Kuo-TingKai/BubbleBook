@@ -1,6 +1,6 @@
 # 🫧 泡泡知道自己在哪裡 - 寶寶的範疇思維書
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://nehsm30126@gmail.com.github.io/baby_book)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://Kuo-TingKai.github.io/baby_book)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 一本將抽象哲學概念轉化為寶寶可理解的童書，透過泡泡的故事探索意識邊界與範疇思維。
@@ -20,12 +20,12 @@
 ## 🚀 快速開始
 
 ### 線上閱讀
-直接訪問 [GitHub Pages](https://nehsm30126@gmail.com.github.io/baby_book) 開始閱讀
+直接訪問 [GitHub Pages](https://Kuo-TingKai.github.io/baby_book) 開始閱讀
 
 ### 本地運行
 ```bash
 # 克隆倉庫
-git clone https://github.com/nehsm30126@gmail.com/baby_book.git
+git clone https://github.com/Kuo-TingKai/baby_book.git
 cd baby_book
 
 # 直接打開index.html或使用本地服務器
@@ -105,7 +105,7 @@ baby_book/
 
 ### 步驟3：訪問網站
 等待幾分鐘後，你的網站將在以下網址上線：
-`https://nehsm30126@gmail.com.github.io/baby_book`
+`https://Kuo-TingKai.github.io/baby_book`
 
 ### 步驟4：自定義域名（可選）
 如果你有自己的域名，可以在倉庫根目錄創建 `CNAME` 文件，內容為你的域名。
@@ -128,8 +128,8 @@ baby_book/
 
 ## 📞 聯絡方式
 
-- 專案網址：[https://github.com/nehsm30126@gmail.com/baby_book](https://github.com/nehsm30126@gmail.com/baby_book)
-- 線上閱讀：[https://nehsm30126@gmail.com.github.io/baby_book](https://nehsm30126@gmail.com.github.io/baby_book)
+- 專案網址：[https://github.com/Kuo-TingKai/baby_book](https://github.com/Kuo-TingKai/baby_book)
+- 線上閱讀：[https://Kuo-TingKai.github.io/baby_book](https://Kuo-TingKai.github.io/baby_book)
 
 ---
 
