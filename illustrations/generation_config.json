@@ -1,0 +1,78 @@
+{
+  "generation_config": {
+    "width": 1024,
+    "height": 1024,
+    "steps": 50,
+    "cfg_scale": 7.5,
+    "sampler": "euler_a",
+    "batch_size": 1,
+    "seed": -1
+  },
+  "illustrations": {
+    "cover": {
+      "prompt": "A large transparent soap bubble floating in soft sky blue gradient background, rainbow prismatic edges, gentle watercolor illustration style, children's book cover, cute bubble with friendly expression, dreamy atmosphere, soft lighting, pastel colors, 20cm x 20cm square format",
+      "negative": "dark, scary, sharp edges, complex details, adult themes"
+    },
+    "page_01_birth": {
+      "prompt": "Cute cartoon bubble blower machine with smiley face, transparent soap bubble flying out with dotted trail lines, pure white background, gentle watercolor style, children's illustration, soft pastel colors, playful atmosphere, bubble trajectory arrows, friendly cartoon style",
+      "negative": "dark background, sharp edges, realistic photography, complex machinery"
+    },
+    "page_02_mirror": {
+      "prompt": "Transparent soap bubble looking at oval mirror with classical frame, reflection of bubble in mirror with faded colors and dotted border, surprised and happy bubble expressions, round speech bubbles, soft watercolor illustration, gentle lighting, children's book style",
+      "negative": "realistic mirror, dark reflections, sharp edges, adult themes"
+    },
+    "page_03_world": {
+      "prompt": "Large transparent soap bubble in center of page, rainbow spectrum flowing inside bubble, flowing wind lines surrounding outside, clear boundary line slightly thickened, soft watercolor style, gentle gradient colors, children's illustration, dreamy atmosphere",
+      "negative": "dark colors, sharp boundaries, realistic physics, complex details"
+    },
+    "page_04_expanding": {
+      "prompt": "Expanding soap bubble with multiple bubble contours showing growth process, outward spreading dynamic lines, boundary gradually thinning, tension building effect, deeper colors and dense lines, soft watercolor illustration, children's book style, gentle expansion",
+      "negative": "explosive, violent, sharp edges, dark tension, scary expansion"
+    },
+    "page_05_burst": {
+      "prompt": "Explosive burst effect with colorful rainbow fragments scattering in all directions, spiral wind vortex lines, dynamic tilted composition, soap bubble breaking moment, soft watercolor style, gentle explosion, children's illustration, colorful chaos",
+      "negative": "violent explosion, sharp fragments, dark colors, scary elements"
+    },
+    "page_06_new_bubble": {
+      "prompt": "New transparent soap bubble with happy smiley face, bright colors showing new beginning, same design as page 1 but with added smile, gentle watercolor style, children's illustration, hopeful atmosphere, soft lighting, rebirth theme",
+      "negative": "dark rebirth, sad expression, sharp edges, complex details"
+    },
+    "page_07_friends": {
+      "prompt": "Group of 3-5 soap bubbles in different sizes, each with unique rainbow colors inside, naturally scattered arrangement maintaining visual balance, each bubble with individual characteristics, soft watercolor style, children's illustration, friendly group scene",
+      "negative": "crowded, chaotic arrangement, dark colors, sharp edges, too many bubbles"
+    },
+    "page_08_hug": {
+      "prompt": "Two soap bubbles gently touching with overlapping boundaries, blurred boundary effect using dotted lines and faded colors, heart symbol at contact point, confused questioning expressions on bubbles, soft watercolor style, children's illustration, gentle contact",
+      "negative": "violent collision, sharp contact, dark emotions, complex physics"
+    },
+    "page_09_merge": {
+      "prompt": "Two soap bubbles merging into one large bubble with arrow showing transformation, mixed rainbow colors inside large bubble, newly drawn clear boundary, soft watercolor style, children's illustration, gentle fusion process, unity theme",
+      "negative": "violent merger, sharp transformation, dark fusion, complex physics"
+    },
+    "page_10_thinking": {
+      "prompt": "Single soap bubble floating quietly with thinking expression, small thought bubbles surrounding large bubble, calm colors and peaceful composition, contemplative atmosphere, soft watercolor style, children's illustration, philosophical mood",
+      "negative": "dark contemplation, sharp thoughts, scary philosophy, complex thinking"
+    },
+    "page_11_understanding": {
+      "prompt": "Happy soap bubble with bright smile, artistic brush strokes surrounding bubble showing creativity, bright colors and open composition, enlightenment feeling, soft watercolor style, children's illustration, joyful realization, creative atmosphere",
+      "negative": "dark enlightenment, sharp realization, scary creativity, complex art"
+    },
+    "page_12_continuing": {
+      "prompt": "Soap bubble flying toward edge of page, infinite gradient sky background extending to infinity, warm colors and complete composition, continuous flying motion, soft watercolor style, children's illustration, eternal journey theme",
+      "negative": "dark journey, sharp flying, scary infinity, complex travel"
+    }
+  },
+  "model_recommendations": [
+    "dreamshaper_8.safetensors",
+    "deliberate_v2.safetensors",
+    "anything-v5.0.safetensors",
+    "realisticVisionV60B1_v60B1VAE.safetensors"
+  ],
+  "style_tags": [
+    "children's book illustration",
+    "soft watercolor",
+    "gentle colors",
+    "pastel colors",
+    "dreamy atmosphere"
+  ]
+}

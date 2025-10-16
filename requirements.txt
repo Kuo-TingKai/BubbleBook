@@ -1,0 +1,14 @@
+# Stable Diffusion Pipeline Requirements
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.21.0
+transformers>=4.25.0
+accelerate>=0.20.0
+xformers>=0.0.20
+safetensors>=0.3.0
+Pillow>=9.0.0
+numpy>=1.21.0
+opencv-python>=4.6.0
+tqdm>=4.64.0
+requests>=2.28.0
+huggingface-hub>=0.15.0

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泡泡知道自己在哪裡 - 寶寶的範疇思維書</title>
+    <style>
+        /* 基礎設置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', '微軟正黑體', sans-serif;
+            background: linear-gradient(135deg, #E3F2FD 0%, #ffffff 100%);
+            color: #1976D2;
+            line-height: 1.6;
+        }
+
+        /* 頁面容器 */
+        .page {
+            width: 20cm;
+            min-height: 20cm;
+            margin: 0 auto;
+            padding: 1.5cm;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2cm;
+            position: relative;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 封面樣式 */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cover-image {
+            width: 12cm;
+            height: 12cm;
+            object-fit: contain;
+            margin-bottom: 1cm;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(25,118,210,0.3);
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #1976D2;
+            margin-bottom: 0.5cm;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #1976D2;
+            margin-bottom: 2cm;
+            opacity: 0.8;
+        }
+
+        .author {
+            font-size: 1.2em;
+            color: #1976D2;
+            margin-bottom: 1cm;
+        }
+
+        .year {
+            font-size: 1em;
+            color: #1976D2;
+            opacity: 0.7;
+        }
+
+        /* 內容頁面樣式 */
+        .content-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page-image {
+            width: 14cm;
+            height: 14cm;
+            object-fit: contain;
+            margin-bottom: 0.5cm;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(25,118,210,0.2);
+            flex-shrink: 0;
+        }
+
+        /* 文字樣式 */
+        .text {
+            font-size: 1.6em;
+            color: #1976D2;
+            margin-bottom: 0.2cm;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .sound-effect {
+            font-size: 2em;
+            color: #FF9800;
+            font-weight: bold;
+            margin-bottom: 0.3cm;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: bounce 2s infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* 對話泡泡樣式 */
+        .speech-bubble {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            border: 3px solid #1976D2;
+            border-radius: 25px;
+            padding: 0.6cm 1cm;
+            margin: 0.2cm 0;
+            position: relative;
+            font-size: 1.4em;
+            color: #1976D2;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(25,118,210,0.3);
+            max-width: 14cm;
+            flex-shrink: 0;
+        }
+
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #1976D2;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #E3F2FD;
+        }
+
+        /* 泡泡圖標 */
+        .bubble-icon {
+            display: inline-block;
+            width: 0.8em;
+            height: 0.8em;
+            background: radial-gradient(circle, rgba(25,118,210,0.3) 0%, rgba(25,118,210,0.1) 100%);
+            border: 2px solid #1976D2;
+            border-radius: 50%;
+            margin-right: 0.3em;
+            vertical-align: middle;
+        }
+
+        /* 彩虹文字效果 */
+        .rainbow-text {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s ease-in-out infinite;
+            font-weight: bold;
+        }
+
+        @keyframes rainbow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .page {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+                padding: 1cm;
+                margin-bottom: 1cm;
+            }
+            
+            .cover-image, .page-image {
+                width: 100%;
+                max-width: 15cm;
+                height: auto;
+            }
+            
+            .title {
+                font-size: 2em;
+            }
+            
+            .text {
+                font-size: 1.4em;
+            }
+            
+            .sound-effect {
+                font-size: 1.8em;
+            }
+            
+            .speech-bubble {
+                font-size: 1.3em;
+                padding: 0.6cm 1cm;
+            }
+        }
+
+        /* 打印樣式 */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin-bottom: 0;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+        }
+
+        /* 特殊效果 */
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 封面頁 -->
+    <div class="page cover">
+        <img src="Cover.png" alt="封面插圖" class="cover-image">
+        <h1 class="title">泡泡知道自己在哪裡</h1>
+        <p class="subtitle">寶寶的範疇思維書</p>
+        <p class="author">作者：郭庭愷</p>
+        <p class="year">2025年</p>
+        
+        <!-- 裝飾性泡泡 -->
+        <div class="sparkle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 30%; right: 15%; animation-delay: 0.5s;"></div>
+        <div class="sparkle" style="bottom: 25%; left: 20%; animation-delay: 1s;"></div>
+        <div class="sparkle" style="bottom: 15%; right: 25%; animation-delay: 1.5s;"></div>
+    </div>
+
+    <!-- 第1頁：泡泡出生了 -->
+    <div class="page content-page">
+        <img src="Page1.png" alt="泡泡出生了" class="page-image">
+        <div class="sound-effect">噗噗噗...</div>
+        <div class="text">泡泡從泡泡機裡飛出來</div>
+        <div class="text">圓圓的、透明的</div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>泡泡知道自己是泡泡
+        </div>
+    </div>
+
+    <!-- 第2頁：泡泡看到自己 -->
+    <div class="page content-page">
+        <img src="Page2.png" alt="泡泡看到自己" class="page-image">
+        <div class="text">泡泡在鏡子前</div>
+        <div class="text">看到另一個泡泡</div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>那是誰？
+        </div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>是我！
+        </div>
+    </div>
+
+    <!-- 第3頁：泡泡的世界 -->
+    <div class="page content-page">
+        <img src="Page3.png" alt="泡泡的世界" class="page-image">
+        <div class="text">泡泡裡有<span class="rainbow-text">彩虹</span></div>
+        <div class="text">泡泡外有風</div>
+        <div class="text">泡泡知道：</div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>我在裡面，世界在外面
+        </div>
+    </div>
+
+    <!-- 第4頁：泡泡變大了 -->
+    <div class="page content-page">
+        <img src="Page4.png" alt="泡泡變大了" class="page-image">
+        <div class="sound-effect">呼呼呼...</div>
+        <div class="text">泡泡越來越大</div>
+        <div class="text">邊界越來越薄</div>
+        <div class="text">快要...快要...</div>
+    </div>
+
+    <!-- 第5頁：泡泡破了 -->
+    <div class="page content-page">
+        <img src="Page5.png" alt="泡泡破了" class="page-image">
+        <div class="sound-effect">啪！</div>
+        <div class="text">泡泡不見了</div>
+        <div class="text">彩虹飛散了</div>
+        <div class="text">風吹進來了</div>
+    </div>
+
+    <!-- 第6頁：新的泡泡 -->
+    <div class="page content-page">
+        <img src="Page6.png" alt="新的泡泡" class="page-image">
+        <div class="sound-effect">噗噗噗...</div>
+        <div class="text">又一個泡泡飛出來</div>
+        <div class="text">圓圓的、透明的</div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>我又是泡泡了！
+        </div>
+    </div>
+
+    <!-- 第7頁：泡泡的朋友們 -->
+    <div class="page content-page">
+        <img src="Page7.png" alt="泡泡的朋友們" class="page-image">
+        <div class="text">好多泡泡！</div>
+        <div class="text">每個泡泡都有自己的<span class="rainbow-text">彩虹</span></div>
+        <div class="text">每個泡泡都有自己的邊界</div>
+        <div class="text">每個泡泡都知道自己在哪裡</div>
+    </div>
+
+    <!-- 第8頁：泡泡擁抱 -->
+    <div class="page content-page">
+        <img src="Page8.png" alt="泡泡擁抱" class="page-image">
+        <div class="text">兩個泡泡輕輕碰在一起</div>
+        <div class="text">邊界變模糊了</div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>我們是一起的嗎？
+        </div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>我們還是分開的嗎？
+        </div>
+    </div>
+
+    <!-- 第9頁：泡泡融合 -->
+    <div class="page content-page">
+        <img src="Page9.png" alt="泡泡融合" class="page-image">
+        <div class="text">變成一個大泡泡！</div>
+        <div class="text"><span class="rainbow-text">彩虹</span>混合了</div>
+        <div class="text">邊界重新畫了</div>
+        <div class="speech-bubble">
+            <span class="bubble-icon"></span>我們現在是一體的
+        </div>
+    </div>
+
+    <!-- JavaScript 添加互動效果 -->
+    <script>
+        // 添加點擊泡泡的音效效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const speechBubbles = document.querySelectorAll('.speech-bubble');
+            
+            speechBubbles.forEach(bubble => {
+                bubble.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.transition = 'transform 0.2s ease';
+                    
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+            
+            // 添加隨機閃爍效果
+            function createSparkle() {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.position = 'absolute';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 2000);
+            }
+            
+            // 每3秒創建一個閃爍效果
+            setInterval(createSparkle, 3000);
+        });
+    </script>
+</body>
+</html>
